@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# AI / local tooling
+AGENTS.md
+CLAUDE.md
+
+# Environment variables
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Build
+dist/
+build/

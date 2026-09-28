@@ -1,0 +1,326 @@
+:root {
+    /* Primary */
+    --green-400: hsl(172, 67%, 45%);
+
+    /* Neutral */
+    --green-900: hsl(183, 100%, 15%);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+    --white: hsl(0, 100%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    font-size: 1rem;
+    font-weight: 700;
+
+    min-height: 100vh;
+
+    background-color: var(--grey-200);
+    color: var(--grey-500);
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+/* ALL */
+.tip-calculator {
+    max-width: 480px;
+    flex: 1;
+    background-color: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    color: var(--green-900);
+}
+
+/* Bill */
+.form-group label {
+    color: var(--grey-500);
+    line-height: 24px;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap img {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Inputs */
+.input-wrap input {
+    font-family: "Space Mono", monospace;
+    width: 100%;
+    border: none;
+    background-color: var(--grey-50);
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--green-900);
+    line-height: 36px;
+    text-align: right;
+}
+
+input::placeholder {
+    color: var(--grey-400);
+    opacity: 1;
+}
+
+/* Select tip % */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.tip-options {
+    border: 0;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.tip-options legend {
+    color: var(--grey-500);
+    padding-bottom: 1rem;
+    line-height: 24px;
+}
+
+.tip-options__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.tip-options__grid button {
+    background-color: var(--green-900);
+    color: var(--white);
+
+    font-family: "Space Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 32px;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.tip-options__grid button:active,
+.tip-options__grid button.selected,
+.tip-options__grid button:focus-visible {
+    background-color: var(--green-400);
+    color: var(--green-900);
+}
+
+#custom-tip {
+    width: 100%;
+    font-family: "Space Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 32px;
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    background-color: var(--grey-50);
+    color: var(--green-900);
+    opacity: 1;
+    text-align: end;
+}
+
+/* Number of person */
+.group-people {
+    margin-top: 32px;
+}
+
+/* Result Form */
+.result-form {
+    background-color: var(--green-900);
+    border-radius: 1rem;
+    color: var(--white);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.result-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-row+.result-row {
+    margin-top: 1.5rem;
+}
+
+.result-row span {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 19px;
+    color: var(--grey-400);
+
+}
+
+.result-row output {
+    font-size: 2rem;
+    color: var(--green-400);
+}
+
+.result-form button {
+    width: 100%;
+    background-color: var(--green-400);
+    color: var(--green-900);
+
+    font-family: "Space Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 32px;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.result-form button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.input-wrap input,
+#custom-tip {
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+}
+
+.input-wrap input:focus,
+#custom-tip:focus {
+    outline-color: var(--green-400);
+}
+
+.tip-options__grid button:hover {
+    background-color: var(--grey-200);
+    color: var(--green-900);
+}
+
+#custom-tip::placeholder {
+    color: var(--grey-500);
+    opacity: 1;
+}
+
+.reset-button:not(:disabled):hover {
+    background-color: var(--grey-200);
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-message {
+    color: #e17457;
+    display: none;
+}
+
+.group-people.error .error-message {
+    display: block;
+}
+
+.group-people.error input {
+    outline: 2px solid #e17457;
+}
+
+
+@media (min-width: 481px) and (max-width: 1023px) {
+  body {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tip-calculator {
+    width: 100%;
+    max-width: 480px;
+  }
+}
+    @media (min-width: 1024px) {
+    body {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header {
+        margin: 0 0 3rem;
+    }
+
+    header img {
+        margin: 0;
+    }
+
+    .tip-calculator {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 920px;
+        max-width: calc(100% - 2rem);
+        gap: 3rem;
+
+        border-radius: 1rem;
+        padding: 2rem;
+
+        flex: initial;
+    }
+
+    .tip-options__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .result-form {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .result-form button {
+        margin-top: auto;
+    }
+
+    .result-row output {
+        font-size: 3rem;
+        line-height: 71px;
+    }
+}
